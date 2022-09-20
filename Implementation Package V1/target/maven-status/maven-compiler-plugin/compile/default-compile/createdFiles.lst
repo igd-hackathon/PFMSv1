@@ -1,0 +1,17 @@
+com/userfront/dao/RoleDao.class
+com/userfront/service/UserServiceImpl/UserSecurityService.class
+com/userfront/dao/UserDao.class
+com/userfront/service/UserServiceImpl/UserServiceImpl.class
+com/userfront/controller/HomeController.class
+com/userfront/controller/UserController.class
+com/userfront/service/UserService.class
+com/userfront/dao/RecipientDao.class
+com/userfront/domain/security/UserRole.class
+com/userfront/config/RequestFilter.class
+com/userfront/config/SecurityConfig.class
+com/userfront/resource/UserResource.class
+com/userfront/UserFrontApplication.class
+com/userfront/domain/Recipient.class
+com/userfront/domain/User.class
+com/userfront/domain/security/Authority.class
+com/userfront/domain/security/Role.class

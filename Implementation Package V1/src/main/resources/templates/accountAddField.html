@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+   <head th:replace="common/header :: common-header"/>
+   <body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+      <head th:replace="common/header :: navbar"/>
+         <div style="width: 100%;">
+            <div style="width: 32%; height: 460px; float: left; background: powderblue;">
+               <table>
+                  <tr>
+                     <th>PAYLOAD DETAILS  </th>
+                  </tr>
+                  <tr>
+                     <td>
+                        <pre id="myText" ></pre>
+                        <script>
+                           var el_up = document.getElementById("GFG_UP");
+                           var el_down = document.getElementById("GFG_DOWN");
+                             var obj = {
+                           "Account": {
+                           "Description": "View account details",
+                           "EndPoints": {
+                               "GET": "/account",
+                           "Fields": {
+                                   "Inputs": {
+                                       "ID": "Integer",
+                           "User Name": "String",
+                           "Account": {
+                                           "Account Number": " Integer",
+                           "Branch": "String",
+                           "Account Balance": "string"
+                                       }
+                                   }
+                               }
+                           }
+                           }
+                           };
+                           
+                           
+                           document.getElementById("myText").innerHTML = JSON.stringify(obj, null, 4).fontcolor("blue");
+                           
+                        </script>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div style="margin-left: 35%; ">
+                  <div style="height: 40px;">
+                     <tr>
+                        <th> <b>Enter text to be added in json format. Template: {"field1":"datatype","field2":"datatype"....}  </b></th>
+                     </tr>
+                  </div>
+                  <tr>
+                     <td>
+                        <div  style="height: 60px;"  >       
+                           <input type="text" class="form-control" id="fname" name="fname"></input>
+                        </div>
+                        <div style="height: 70px;">
+                           <a
+                              th:href="@{http://localhost:8080/download/application}">
+                           <button type="button" class="btn  btn-success ">Add, build and download</button>
+                           </a>
+                        </div>
+                     </td>
+                  </tr>
+            </div>
+         </div>
+         <div th:replace="common/header :: body-bottom-scripts"/>
+   </body>
+</html>

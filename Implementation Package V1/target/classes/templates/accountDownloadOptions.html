@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+   <head th:replace="common/header :: common-header"/>
+   <body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+      <head th:replace="common/header :: navbar"/>
+         <div style="width: 100%;">
+            <div style="width: 32%; height: 460px; float: left; background: powderblue;">
+               <table>
+                  <tr>
+                     <th>PAYLOAD DETAILS  </th>
+                  </tr>
+                  <tr>
+                     <td>
+                        <pre id="myText" ></pre>
+                        <script>
+                           var el_up = document.getElementById("GFG_UP");
+                           var el_down = document.getElementById("GFG_DOWN");
+                           var obj = {
+                           "Account": {
+                           "Description": "View account details",
+                           "EndPoints": {
+                               "GET": "/account",
+                           "Fields": {
+                                   "Inputs": {
+                                       "ID": "Integer",
+                           "User Name": "String",
+                           "Account": {
+                                           "Account Number": " Integer",
+                           "Branch": "String",
+                           "Account Balance": "string"
+                                       }
+                                   }
+                               }
+                           }
+                           }
+                           };
+                           
+                           document.getElementById("myText").innerHTML = JSON.stringify(obj, null, 4).fontcolor("blue");
+                           
+                        </script>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div style="margin-left: 45%; height: 300px; ">
+                  <div  style="height: 50px;"  >                 
+                  <tr>
+                     <th> <b>Select an option for reuse of the service</b>  </th>
+                  </tr>
+				  </div>
+				<table>
+                  <tr>
+                     <td>
+                        <div  style="height: 70px;"  >                 
+                           <a
+                              th:href="@{http://localhost:8080/download/application}">
+                           <button type="button" style="width:300px" class="btn  btn-success ">Build existing service and download</button>
+                           </a>
+                        </div>
+                        <div  style="height: 70px;" >
+                           <a	th:href="@{http://localhost:8080/account/addfields}">
+                           <button class="btn  btn-success" type="submit" style="width:300px">Add fields, build and download</button></a>
+                        </div>
+                        <div   style="height: 70px;" >
+                           <a th:href="@{http://localhost:8080/download/code}">
+                           <button class="btn  btn-success" style="width:300px" type="submit">Download source code</button></a>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div th:replace="common/header :: body-bottom-scripts"/>
+   </body>
+</html>
